@@ -1,9 +1,9 @@
-import './style.css';
+import '../css/style.css';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 import foo from './main.js';
 import { debounce } from "debounce";
-import itemCountry from './templates/listCountry.hbs';
+import itemCountry from '../templates/listCountry.hbs';
 // --------------------------------------
 const inp = document.querySelector('.js-input');
 const listCountries = document.querySelector('.js-list');
