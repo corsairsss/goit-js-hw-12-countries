@@ -11,7 +11,7 @@ const notyf = new Notyf(notyfOptions)
 const inputSearchCountry = document.querySelector('.js-input');
 const listCountries = document.querySelector('.js-list');
 const itemFindCountry = document.querySelector('.item');
-
+listCountries.addEventListener('click', clickToCountry)
 inputSearchCountry.addEventListener('input', debounce(showResultSearchCountry, 500));
 
 function showResultSearchCountry(e) {
@@ -34,3 +34,10 @@ function showResultSearchCountry(e) {
   });
 }
 
+function clickToCountry(e) {
+  const nameCountry = e.target.text;
+  fetchArticles.fetchArticles(nameCountry).then(data => {
+    itemFindCountry.innerHTML = '';
+    itemFindCountry.insertAdjacentHTML('beforeend', itemCountry(data));
+  });
+}
